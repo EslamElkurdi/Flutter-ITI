@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iti/day_1/ui/messenger.dart';
+import 'package:flutter_iti/day_1/ui/search.dart';
 
 class Messenger extends StatefulWidget {
    Messenger({super.key});
@@ -66,28 +67,34 @@ class _MessengerState extends State<Messenger> {
       child: Column(
         children: [
           // search
-          Container(
+          GestureDetector(
+            child: Container(
 
 
-            decoration: BoxDecoration(
-                color: Colors.grey[300],
-                borderRadius: BorderRadius.all(Radius.circular(20))
+              decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.all(Radius.circular(20))
 
-            ),
+              ),
 
-            child: TextField(
-              decoration: InputDecoration(
+              child: TextField(
+                decoration: InputDecoration(
 
-                hintText: 'Search',
+                  hintText: 'Search',
 
-                prefixIcon: Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                  prefixIcon: Icon(Icons.search),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
                 ),
               ),
-            ),
-            height: 50,
+              height: 50,
 
+            ),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchScreen()));
+              print("HI");
+            },
           ),
 
           // scroll H
